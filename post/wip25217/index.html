@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>Build 25217 | WIP Dev通道更新日志 | Untitled</title>
+<meta name="description" content="Untitled&#39;s Blog">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://faq0.github.io/favicon.ico?v=1665128410756">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://faq0.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://faq0.github.io">
+        <img class="avatar" src="https://faq0.github.io/images/avatar.png?v=1665128410756" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://faq0.github.io">
+        <h1 class="site-title">Untitled</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+            <div class="feature-container" style="background-image: url('https://faq0.github.io/post-images/wip25217.png')">
+            </div>
+          
+          <h2 class="post-title">Build 25217 | WIP Dev通道更新日志</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2022-10-07</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://faq0.github.io/tag/jR0jEO0nP/">
+                    Windows Insider Preview
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content" v-pre>
+            <h1 id="目录">目录：</h1>
+<p><ul class="markdownIt-TOC">
+<li><a href="#%E7%9B%AE%E5%BD%95">目录：</a></li>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF">基本信息</a></li>
+<li><a href="#%E9%87%8D%E8%A6%81%E6%9B%B4%E6%96%B0">重要更新</a></li>
+<li><a href="#%E5%AE%98%E6%96%B9%E5%8D%9A%E5%AE%A2-%E7%BF%BB%E8%AF%91%E7%89%88">官方博客 - 翻译版</a>
+<ul>
+<li><a href="#tldr">TL;DR</a></li>
+<li><a href="#%E6%96%B0%E5%A2%9E%E5%86%85%E5%AE%B9">新增内容</a>
+<ul>
+<li><a href="#%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E5%8F%AF%E4%BB%A5%E5%BC%80%E5%A7%8B%E6%9E%84%E5%BB%BA%E7%AC%AC%E4%B8%89%E6%96%B9%E5%B0%8F%E7%BB%84%E4%BB%B6">开发人员可以开始构建第三方小组件</a>
+<ul>
+<li><a href="#%E6%96%B0%E5%8A%9F%E8%83%BD">新功能：</a></li>
+<li><a href="#%E5%B7%B2%E7%9F%A5%E9%99%90%E5%88%B6">已知限制：</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-ime-%E4%B8%AD%E7%9A%84%E4%BA%91%E5%BB%BA%E8%AE%AE">简体中文 IME 中的云建议</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9B%B4%E6%94%B9%E5%92%8C%E6%94%B9%E8%BF%9B">更改和改进</a>
+<ul>
+<li><a href="#%E8%BE%93%E5%85%A5">[输入]</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BF%AE%E5%A4%8D">修复</a>
+<ul>
+<li><a href="#%E9%92%88%E5%AF%B9%E5%B9%B3%E6%9D%BF%E7%94%B5%E8%84%91%E4%BC%98%E5%8C%96%E7%9A%84%E4%BB%BB%E5%8A%A1%E6%A0%8F">[针对平板电脑优化的任务栏]</a></li>
+<li><a href="#%E7%AA%97%E5%8F%A3">[窗口]</a></li>
+<li><a href="#%E4%BB%BB%E5%8A%A1%E6%A0%8F%E6%9B%B4%E6%96%B0">[任务栏更新]</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE">[设置]</a></li>
+<li><a href="#%E5%85%B6%E4%BB%96">[其他]</a></li>
+</ul>
+</li>
+<li><a href="#%E5%B7%B2%E7%9F%A5%E9%97%AE%E9%A2%98">已知问题</a>
+<ul>
+<li><a href="#%E6%80%BB%E8%A7%88">[总览]</a></li>
+<li><a href="#%E5%B9%B3%E6%9D%BF%E7%94%B5%E8%84%91%E4%BC%98%E5%8C%96%E7%9A%84%E4%BB%BB%E5%8A%A1%E6%A0%8F">[平板电脑优化的任务栏]</a></li>
+<li><a href="#%E5%B0%8F%E7%BB%84%E4%BB%B6">[小组件]</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AF%B9%E4%BA%8E%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98">对于开发人员</a></li>
+<li><a href="#%E6%96%B0%E5%8A%9F%E8%83%BDwindows-11-%E4%B8%AD-microsoft-teams-chat-%E5%8A%9F%E8%83%BD%E7%9A%84%E6%96%B0%E8%A7%86%E9%A2%91%E9%80%9A%E8%AF%9D%E4%BD%93%E9%AA%8C">新功能：Windows 11 中 Microsoft Teams Chat 功能的新视频通话体验</a></li>
+<li><a href="#%E5%85%B3%E4%BA%8Edev-%E6%B8%A0%E9%81%93">关于Dev 渠道</a></li>
+<li><a href="#windows-insider-%E7%89%B9%E5%88%AB%E9%93%BE%E6%8E%A5">Windows Insider 特别链接</a></li>
+</ul>
+</li>
+</ul>
+</p>
+<h1 id="基本信息">基本信息</h1>
+<p>内部版本号：10.0.25217.1000<br>
+开发环：rs_prerelease<br>
+23H1 (NT10.0)<br>
+<img src="https://faq0.github.io/post-images/1665122133093.png" alt="Build 25217" loading="lazy"></p>
+<h1 id="重要更新">重要更新</h1>
+<ol>
+<li>微软中文IME更新</li>
+<li>第三方小组件工具已启用</li>
+</ol>
+<h1 id="官方博客-翻译版">官方博客 - 翻译版</h1>
+<p>原文链接：<a href="http://aka.ms/wip25217">http://aka.ms/wip25217</a><br>
+翻译时间：2022.10.7</p>
+<h2 id="tldr">TL;DR</h2>
+<ul>
+<li>开发人员可以开始在最新 Insider Preview 版本，使用 WinAppSDK 1.2 Preview 2 版本构建和测试第三方小组件。详细信息和链接如下。</li>
+<li>此版本包括一些与输入相关的更改和修复。</li>
+<li>一些 Windows Insiders 可以提前体验 Windows 11 上聊天功能的新视频通话体验。详情如下。</li>
+<li>一个 Microsoft Store 更新将被推送，其中包括例如 Xbox Game Pass 中的重点游戏显示的改进。</li>
+</ul>
+<h2 id="新增内容">新增内容</h2>
+<h3 id="开发人员可以开始构建第三方小组件">开发人员可以开始构建第三方小组件</h3>
+<p>最新版本支持第三方小组件，它是 WinAppSDK 1.2 Preview 2 版本更新的一部分。Windows 团队一直在努力将Windows 11中首次引入的小组件板功能扩展到更多开发人员。此版本中包含的第三方小组件平台将允许开发人员为 Win32 应用创建小组件，并在 Windows 11 小组件板上对其进行本地测试。</p>
+<h4 id="新功能">新功能：</h4>
+<ul>
+<li>如果计算机已经打开了“开发人员模式”——即 <em>Windows设置-隐私和安全性-开发者选项</em> 中的“开发人员模式”选项、将 Windows 升级到了最新预览版、将小组件版本升级至 V521.20060.1205.0 或以上后，开发人员可以使用已打包的 Win32 应用在本地创建和测试第三方小组件。有关小组件的更多信息，包括其先决条件，请参阅<a href="http://aka.ms/widgetdocs">小组件设计文档</a>与<a href="http://aka.ms/widgetdevdocs">小组件开发文档</a>。</li>
+</ul>
+<h4 id="已知限制">已知限制：</h4>
+<ul>
+<li>第三方小组件只能在此预览版上进行本地测试。WinAppSDK 1.2 GA 发布后，Windows 11 正式版用户可以从微软商店获取该应用的第三方小部件。</li>
+<li>对第三方PWA小组件的支持也将作为未来 Microsoft Edge 版本更新的一部分。</li>
+</ul>
+<h3 id="简体中文-ime-中的云建议">简体中文 IME 中的云建议</h3>
+<p>开发团队正在尝试一些更改，使您可以轻松地用简体中文 IME 打出新的、热门的、流行的单词。这些更改包括被改进的云建议和集成的搜索建议。云建议将必应中最相关的单词添加到 IME 候选窗口。我们更新了后端逻辑，以便我们可以提供更好、更新的建议。<br>
+<img src="https://faq0.github.io/post-images/1665123594271.webp" alt="" loading="lazy"></p>
+<center>微软简体中文 IME 候选窗口中第二位是必应提供的单词建议</center>
+<br></br>
+集成的搜索建议还为您提供与必应搜索结果内容相似的更多建议。它们可以被直接插入文本，也可以在必应中搜索。
+<figure data-type="image" tabindex="1"><img src="https://faq0.github.io/post-images/1665123766412.webp" alt="" loading="lazy"></figure>
+<center>IME 候选窗口展开的必应搜索建议</center>
+<br></br>
+若要打开这些功能，请选择 IME 候选窗口右端的箭头，并点击"打开"按钮。
+<figure data-type="image" tabindex="2"><img src="https://faq0.github.io/post-images/1665123895560.webp" alt="" loading="lazy"></figure>
+<center>指向IME 候选窗口右侧箭头的弹出提示</center>
+<br></br>
+*[此功能为A/B测试。]*
+<p><em>反馈：请在反馈中心 （WIN + F）中的“输入和语言&gt;文本输入”下提交反馈。</em></p>
+<h2 id="更改和改进">更改和改进</h2>
+<h3 id="输入">[输入]</h3>
+<ul>
+<li><a href="https://blogs.windows.com/windows-insider/2022/08/10/announcing-windows-11-insider-preview-build-25179/">Build 25179</a> 中新增了泰米尔语 Anjal 键盘，它现在可供所有 Dev 通道中的 Windows Insiders 使用。若要添加它，请确保泰米尔语（新加坡）、泰米尔语（马来西亚）、泰米尔语（斯里兰卡）或泰米尔语（印度）于 <em>Windows设置-时间和语言-语言和区域</em> 中列出 ，并单击“...”，选择“语言选项”，然后将“Tamil Anjal (QWERTY)” 添加到键盘列表中。</li>
+<li>我们已禁用于 <a href="https://blogs.windows.com/windows-insider/2022/08/24/announcing-windows-11-insider-preview-build-25188/">Build 25188</a> 中推出的新触摸键盘设置。在进一步完善设计后，将来可能将此功能重新加入。如<a href="https://blogs.windows.com/windows-insider/2022/02/03/whats-coming-for-the-windows-insider-program-in-2022/">之前的博客</a>，在 Dev 或 Beta 频道中内测的功能并不一定会推送至正式版。</li>
+</ul>
+<h2 id="修复">修复</h2>
+<h3 id="针对平板电脑优化的任务栏">[针对平板电脑优化的任务栏]</h3>
+<p><em>注意：仅当您的设备启用了平板电脑优化任务栏选项（已于<a href="https://blogs.windows.com/windows-insider/2022/09/08/announcing-windows-11-insider-preview-build-25197/">此处</a>记录）时，才会获得这些修复。平板电脑优化的任务栏仍在向 Windows Insiders 推出，还未全量化。</em></p>
+<ul>
+<li>修复了导致任务栏在没有正在运行的窗口时可能折叠的问题。</li>
+<li>修复了使用左边缘或右边缘手势时分别导致小组件、通知中心与任务栏重叠或看起来被任务栏截断的问题。</li>
+<li>修复了导致任务栏在切换应用时 explorer.exe 崩溃的问题。</li>
+<li>修复了打开浮出控件后 explorer.exe 崩溃的问题。</li>
+</ul>
+<h3 id="窗口">[窗口]</h3>
+<ul>
+<li>修复了“任务视图”中窗口预览缩略图的关闭按钮略微超出缩略图范围的问题。</li>
+<li>修复了在最近版本的窗口中切换窗口，渲染时看到窗口闪烁的问题。</li>
+<li>修复了在互联网连接稳定时，导致 Miracast 视频质量在最近的版本中缓慢、断断续续的问题。</li>
+</ul>
+<h3 id="任务栏更新">[任务栏更新]</h3>
+<p><em>注意：仅当您的设备上启用了任务栏更新（<a href="https://blogs.windows.com/windows-insider/2022/09/08/announcing-windows-11-insider-preview-build-25197/">此处</a>记录）时，才会获得这些修复。平板电脑优化的任务栏仍在向 Windows Insiders 推出，尚未全量化。</em></p>
+<ul>
+<li>“快速设置”项目现在可以再次通过触摸进行重新排列。</li>
+</ul>
+<h3 id="设置">[设置]</h3>
+<ul>
+<li>修复了 <em>Windows 设置-网络和 Internet -高级网络设置</em> 下在某些网络中显示错误的连接速度的问题。</li>
+</ul>
+<h3 id="其他">[其他]</h3>
+<ul>
+<li>修复了 ARM64 电脑上的远程桌面意外地仅使用 TCP，不使用 TCP 的问题。<br>
+<em>注意：此处提到的某些修复可能会进入 Windows 11 正式版服务更新中。</em></li>
+</ul>
+<h2 id="已知问题">已知问题</h2>
+<h3 id="总览">[总览]</h3>
+<ul>
+<li>音频在升级最近版本后停止工作的问题正在被调查。</li>
+<li>应用在最近版本中崩溃的问题正在被调查。</li>
+<li>应用中的各种 UI 元素似乎在升级最新版本后消失，又重新出现的问题正在被调查。</li>
+</ul>
+<h3 id="平板电脑优化的任务栏">[平板电脑优化的任务栏]</h3>
+<ul>
+<li>在桌面姿态和平板电脑姿态之间切换时，任务栏有时会闪烁。</li>
+<li>在桌面姿态和平板电脑姿态之间切换时，任务栏需要更长的时间过渡到触摸优化版本。</li>
+<li>使用底部右侧边缘手势打开“快速设置”时，任务栏有时会停留在展开状态，而不是关闭到折叠状态。</li>
+</ul>
+<h3 id="小组件">[小组件]</h3>
+<ul>
+<li>在从右向左显示语言（如阿拉伯语）中，当单击小组件板的展开视图时，内容会在小部件板调整大小之前以动画形式离开视图。</li>
+<li>通知标记编号可能未在任务栏上对齐。</li>
+</ul>
+<h2 id="对于开发人员">对于开发人员</h2>
+<p>您可以在 &lt;aka.ms/windowsinsidersdk&gt; 中下载最新的 Windows Insider SDK。<br>
+SDK NuGet 包现在也在 <a href="https://www.nuget.org/profiles/WindowsSDK">NuGet资源库 | Windows SDK</a> 中进行更新。<br>
+其中包括：</p>
+<ul>
+<li>如 &lt;aka.ms/windowsinsidersdk&gt; 中所述的用于 .NET 应用的 <a href="https://www.nuget.org/packages/Microsoft.Windows.SDK.NET.Ref/">.NET TFM</a> 包</li>
+<li>每个体系结构的 Win32 标头和库的<a href="https://www.nuget.org/packages/Microsoft.Windows.SDK.CPP/">C++包</a></li>
+<li>当你只需要工具，如 MakeAppx.exe、MakePri.exe、SignTool.exe，请使用<a href="https://www.nuget.org/packages/Microsoft.Windows.SDK.BuildTools/">构建工具包</a><br>
+这些 NuGet 包提供对 SDK 的更精细访问，并在 CI/CD 管道中更好地集成。</li>
+</ul>
+<h2 id="新功能windows-11-中-microsoft-teams-chat-功能的新视频通话体验">新功能：Windows 11 中 Microsoft Teams Chat 功能的新视频通话体验</h2>
+<p>Windows 11 中的 Microsoft Teams Chat 功能将采用更直观，更简化的方式与世界上的任何人进行视频通话。<br>
+<img src="https://faq0.github.io/post-images/1665125793292.webp" alt="" loading="lazy"></p>
+<center>来自 Windows 11 中的Microsoft Teams Chat 功能的新视频通话体验</center>
+<br></br>
+当您从任务栏打开 Chat 功能时，窗口焦点将放在您身上，您可以预览自己的摄像头展示效果，以及与人员联系的各种方式。现在，与其他使用 Teams 个人版的人进行视频通话更加方便。对于那些不在 Teams 中的人来说，这也不是问题——您可以轻松地通过短信或电子邮件与任何人共享呼叫链接，并直接使用 Chat 功能进行对话。
+这种体验将在未来几个月内推广到更多成员，但一小部分用户现在已经可以开始体验。从任务栏启动 Chat 功能来查看您是否被加入。您可以直接在该功能中提供反馈，我们很乐意倾听您的反馈。
+*反馈：请在反馈中心（WIN + F）中的“桌面环境”>“聊天”下提交反馈。*
+## Microsoft Store 更新
+微软团队开始推出微软应用商店更新（版本 22209），其中包含以下改进：
++ 在应用商店中查找游戏时，现在清楚地显示它是否是 Xbox Game Pass 订阅中的游戏，以及当前的价格。在此类游戏的详细信息页面上，我们更新了按钮设计并添加了一个新部分，让您知道订阅中包含的内容。
+<figure data-type="image" tabindex="3"><img src="https://faq0.github.io/post-images/1665126257342.webp" alt="" loading="lazy"></figure>
+<center>应用商店中的游戏显示它是否包含于 Xbox Game Pass 订阅，以及当前的价格</center>
+<br></br>
++ 我们通过简化的选项和改进的性能增强了“库”选项卡的体验。
+*反馈：请在反馈中心 （WIN + F）中的“Microsoft Store”下提交反馈。*
+<p>关于开发频道<br>
+开发人员频道接收的构建代表了我们工程师的长期领导工作，这些工程师的功能和经验在我们尝试不同的概念并获得反馈时可能永远不会发布。请务必记住，我们发布到开发人员频道的内部版本不应被视为与任何特定版本的 Windows 匹配，并且所包含的功能可能会随着时间的推移而更改、删除或在预览体验成员版本中替换，或者可能永远不会在 Windows 预览体验成员之外向一般客户发布。有关详细信息，请阅读此博客文章，了解我们计划如何使用开发频道来孵化新想法、处理长线索项目以及控制各个功能的状态。</p>
+<p>这些并不总是稳定的版本，有时您会看到阻止关键活动或需要解决方法的问题。请务必阅读我们博客文章中列出的已知问题，因为我们记录了每个航班中的许多此类问题。</p>
+<p>开发人员频道中的内部版本号高于测试版和发布预览版频道中的 Windows 11 预览版。如果不执行全新安装，则无法从开发人员频道切换到测试版或发布预览版，否则无法将其安装回当前发布的 Windows 11 版本。</p>
+<p>另外：由于开发和 Beta 渠道代表了我们工程师的并行开发路径，因此在某些情况下，功能和体验可能会首先显示在测试版渠道中。</p>
+<p>您在桌面右下角看到的桌面水印对于这些预发行版本是正常的。</p>
+<h2 id="关于dev-渠道">关于Dev 渠道</h2>
+<p>Dev 通道收到的更新代表工程师的长期工作，<strong>其中包含了可能永远也不会推送至正式版更新的功能</strong>。Dev 通道也是我们尝试不同的概念并获取反馈的版本。请务必记住，推送至 Dev 通道的更新不应该与任何 Windows 版本相匹配。其中的功能可能会随着时间的推移而更改、移除、在 Insider 版本中被替代、或可能永远不会向一般客户发布。有关详细信息，请阅读<a href="https://blogs.windows.com/windows-insider/2022/02/03/whats-coming-for-the-windows-insider-program-in-2022/">此博客文章</a>，了解我们计划如何用 Dev 通道孵化新想法、处理长期项目以及控制各个独立功能的状态。</p>
+<p>这些版本并不总是稳定版本，有时您会看到阻止关键活动或需要解决方法的问题。请务必阅读 Windows Insider Blog 文章列出的已知问题，因为它记录了每个版本中的许多此类问题。<br>
+目前，Dev 通道的版本号高于 Beta 与 Release Preview 通道。您将需要对设备执行全新安装回正式版后才能切换至 Beta 与 Release Preview 通道。</p>
+<p>另外：由于 Dev 和 Beta 渠道代表了工程师的并行开发路径，因此在某些情况下，功能和体验可能会首先显示在 Beta 通道中。</p>
+<p><strong>您在桌面右下角看到的桌面水印对于这些预发布版本是正常的。</strong></p>
+<h2 id="windows-insider-特别链接">Windows Insider 特别链接</h2>
+<ul>
+<li>想要了解我们是如何制作 Windows 11 的？查看我们的 <a href="https://insider.windows.com/insidewindows11">Inside Windows 11 网站</a>，聆听并会见来自工程、设计和研究领域的创客，分享他们在整个旅程中的见解和独特观点。</li>
+<li>你可以在<a href="https://aka.ms/wip-docs">此处</a>查看我们的 Windows 预览体验计划文档。</li>
+<li>查看 <a href="https://aka.ms/flighthub">Flight Hub</a>，全面了解哪个预览体验成员频道中的版本。</li>
+</ul>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://faq0.github.io/post/wip22610/">
+              <h3 class="post-title">
+                下一篇：Build 22610 | WIP Dev通道更新日志
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">Untitled's Blog</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  My Profile:  <a href="https://github.com/faq0" target="_blank">Github</a> | <a class="rss" href="https://faq0.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>

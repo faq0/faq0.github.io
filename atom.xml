@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://faq0.github.io</id>
+    <title>Untitled</title>
+    <updated>2022-10-07T09:11:51.893Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://faq0.github.io"/>
+    <link rel="self" href="https://faq0.github.io/atom.xml"/>
+    <subtitle>Untitled&apos;s Blog</subtitle>
+    <logo>https://faq0.github.io/images/avatar.png</logo>
+    <icon>https://faq0.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2022, Untitled</rights>
+    <entry>
+        <title type="html"><![CDATA[Build 25217 | WIP Dev通道更新日志]]></title>
+        <id>https://faq0.github.io/post/wip25217/</id>
+        <link href="https://faq0.github.io/post/wip25217/">
+        </link>
+        <updated>2022-10-07T05:53:30.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="目录">目录：</h1>
+<p><ul class="markdownIt-TOC">
+<li><a href="#%E7%9B%AE%E5%BD%95">目录：</a></li>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF">基本信息</a></li>
+<li><a href="#%E9%87%8D%E8%A6%81%E6%9B%B4%E6%96%B0">重要更新</a></li>
+<li><a href="#%E5%AE%98%E6%96%B9%E5%8D%9A%E5%AE%A2-%E7%BF%BB%E8%AF%91%E7%89%88">官方博客 - 翻译版</a>
+<ul>
+<li><a href="#tldr">TL;DR</a></li>
+<li><a href="#%E6%96%B0%E5%A2%9E%E5%86%85%E5%AE%B9">新增内容</a>
+<ul>
+<li><a href="#%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E5%8F%AF%E4%BB%A5%E5%BC%80%E5%A7%8B%E6%9E%84%E5%BB%BA%E7%AC%AC%E4%B8%89%E6%96%B9%E5%B0%8F%E7%BB%84%E4%BB%B6">开发人员可以开始构建第三方小组件</a>
+<ul>
+<li><a href="#%E6%96%B0%E5%8A%9F%E8%83%BD">新功能：</a></li>
+<li><a href="#%E5%B7%B2%E7%9F%A5%E9%99%90%E5%88%B6">已知限制：</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-ime-%E4%B8%AD%E7%9A%84%E4%BA%91%E5%BB%BA%E8%AE%AE">简体中文 IME 中的云建议</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9B%B4%E6%94%B9%E5%92%8C%E6%94%B9%E8%BF%9B">更改和改进</a>
+<ul>
+<li><a href="#%E8%BE%93%E5%85%A5">[输入]</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BF%AE%E5%A4%8D">修复</a>
+<ul>
+<li><a href="#%E9%92%88%E5%AF%B9%E5%B9%B3%E6%9D%BF%E7%94%B5%E8%84%91%E4%BC%98%E5%8C%96%E7%9A%84%E4%BB%BB%E5%8A%A1%E6%A0%8F">[针对平板电脑优化的任务栏]</a></li>
+<li><a href="#%E7%AA%97%E5%8F%A3">[窗口]</a></li>
+<li><a href="#%E4%BB%BB%E5%8A%A1%E6%A0%8F%E6%9B%B4%E6%96%B0">[任务栏更新]</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE">[设置]</a></li>
+<li><a href="#%E5%85%B6%E4%BB%96">[其他]</a></li>
+</ul>
+</li>
+<li><a href="#%E5%B7%B2%E7%9F%A5%E9%97%AE%E9%A2%98">已知问题</a>
+<ul>
+<li><a href="#%E6%80%BB%E8%A7%88">[总览]</a></li>
+<li><a href="#%E5%B9%B3%E6%9D%BF%E7%94%B5%E8%84%91%E4%BC%98%E5%8C%96%E7%9A%84%E4%BB%BB%E5%8A%A1%E6%A0%8F">[平板电脑优化的任务栏]</a></li>
+<li><a href="#%E5%B0%8F%E7%BB%84%E4%BB%B6">[小组件]</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AF%B9%E4%BA%8E%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98">对于开发人员</a></li>
+<li><a href="#%E6%96%B0%E5%8A%9F%E8%83%BDwindows-11-%E4%B8%AD-microsoft-teams-chat-%E5%8A%9F%E8%83%BD%E7%9A%84%E6%96%B0%E8%A7%86%E9%A2%91%E9%80%9A%E8%AF%9D%E4%BD%93%E9%AA%8C">新功能：Windows 11 中 Microsoft Teams Chat 功能的新视频通话体验</a></li>
+<li><a href="#%E5%85%B3%E4%BA%8Edev-%E6%B8%A0%E9%81%93">关于Dev 渠道</a></li>
+<li><a href="#windows-insider-%E7%89%B9%E5%88%AB%E9%93%BE%E6%8E%A5">Windows Insider 特别链接</a></li>
+</ul>
+</li>
+</ul>
+</p>
+<h1 id="基本信息">基本信息</h1>
+<p>内部版本号：10.0.25217.1000<br>
+开发环：rs_prerelease<br>
+23H1 (NT10.0)<br>
+<img src="https://faq0.github.io/post-images/1665122133093.png" alt="Build 25217" loading="lazy"></p>
+<h1 id="重要更新">重要更新</h1>
+<ol>
+<li>微软中文IME更新</li>
+<li>第三方小组件工具已启用</li>
+</ol>
+<h1 id="官方博客-翻译版">官方博客 - 翻译版</h1>
+<p>原文链接：<a href="http://aka.ms/wip25217">http://aka.ms/wip25217</a><br>
+翻译时间：2022.10.7</p>
+<h2 id="tldr">TL;DR</h2>
+<ul>
+<li>开发人员可以开始在最新 Insider Preview 版本，使用 WinAppSDK 1.2 Preview 2 版本构建和测试第三方小组件。详细信息和链接如下。</li>
+<li>此版本包括一些与输入相关的更改和修复。</li>
+<li>一些 Windows Insiders 可以提前体验 Windows 11 上聊天功能的新视频通话体验。详情如下。</li>
+<li>一个 Microsoft Store 更新将被推送，其中包括例如 Xbox Game Pass 中的重点游戏显示的改进。</li>
+</ul>
+<h2 id="新增内容">新增内容</h2>
+<h3 id="开发人员可以开始构建第三方小组件">开发人员可以开始构建第三方小组件</h3>
+<p>最新版本支持第三方小组件，它是 WinAppSDK 1.2 Preview 2 版本更新的一部分。Windows 团队一直在努力将Windows 11中首次引入的小组件板功能扩展到更多开发人员。此版本中包含的第三方小组件平台将允许开发人员为 Win32 应用创建小组件，并在 Windows 11 小组件板上对其进行本地测试。</p>
+<h4 id="新功能">新功能：</h4>
+<ul>
+<li>如果计算机已经打开了“开发人员模式”——即 <em>Windows设置-隐私和安全性-开发者选项</em> 中的“开发人员模式”选项、将 Windows 升级到了最新预览版、将小组件版本升级至 V521.20060.1205.0 或以上后，开发人员可以使用已打包的 Win32 应用在本地创建和测试第三方小组件。有关小组件的更多信息，包括其先决条件，请参阅<a href="http://aka.ms/widgetdocs">小组件设计文档</a>与<a href="http://aka.ms/widgetdevdocs">小组件开发文档</a>。</li>
+</ul>
+<h4 id="已知限制">已知限制：</h4>
+<ul>
+<li>第三方小组件只能在此预览版上进行本地测试。WinAppSDK 1.2 GA 发布后，Windows 11 正式版用户可以从微软商店获取该应用的第三方小部件。</li>
+<li>对第三方PWA小组件的支持也将作为未来 Microsoft Edge 版本更新的一部分。</li>
+</ul>
+<h3 id="简体中文-ime-中的云建议">简体中文 IME 中的云建议</h3>
+<p>开发团队正在尝试一些更改，使您可以轻松地用简体中文 IME 打出新的、热门的、流行的单词。这些更改包括被改进的云建议和集成的搜索建议。云建议将必应中最相关的单词添加到 IME 候选窗口。我们更新了后端逻辑，以便我们可以提供更好、更新的建议。<br>
+<img src="https://faq0.github.io/post-images/1665123594271.webp" alt="" loading="lazy"></p>
+<center>微软简体中文 IME 候选窗口中第二位是必应提供的单词建议</center>
+<br></br>
+集成的搜索建议还为您提供与必应搜索结果内容相似的更多建议。它们可以被直接插入文本，也可以在必应中搜索。
+<figure data-type="image" tabindex="1"><img src="https://faq0.github.io/post-images/1665123766412.webp" alt="" loading="lazy"></figure>
+<center>IME 候选窗口展开的必应搜索建议</center>
+<br></br>
+若要打开这些功能，请选择 IME 候选窗口右端的箭头，并点击"打开"按钮。
+<figure data-type="image" tabindex="2"><img src="https://faq0.github.io/post-images/1665123895560.webp" alt="" loading="lazy"></figure>
+<center>指向IME 候选窗口右侧箭头的弹出提示</center>
+<br></br>
+*[此功能为A/B测试。]*
+<p><em>反馈：请在反馈中心 （WIN + F）中的“输入和语言&gt;文本输入”下提交反馈。</em></p>
+<h2 id="更改和改进">更改和改进</h2>
+<h3 id="输入">[输入]</h3>
+<ul>
+<li><a href="https://blogs.windows.com/windows-insider/2022/08/10/announcing-windows-11-insider-preview-build-25179/">Build 25179</a> 中新增了泰米尔语 Anjal 键盘，它现在可供所有 Dev 通道中的 Windows Insiders 使用。若要添加它，请确保泰米尔语（新加坡）、泰米尔语（马来西亚）、泰米尔语（斯里兰卡）或泰米尔语（印度）于 <em>Windows设置-时间和语言-语言和区域</em> 中列出 ，并单击“...”，选择“语言选项”，然后将“Tamil Anjal (QWERTY)” 添加到键盘列表中。</li>
+<li>我们已禁用于 <a href="https://blogs.windows.com/windows-insider/2022/08/24/announcing-windows-11-insider-preview-build-25188/">Build 25188</a> 中推出的新触摸键盘设置。在进一步完善设计后，将来可能将此功能重新加入。如<a href="https://blogs.windows.com/windows-insider/2022/02/03/whats-coming-for-the-windows-insider-program-in-2022/">之前的博客</a>，在 Dev 或 Beta 频道中内测的功能并不一定会推送至正式版。</li>
+</ul>
+<h2 id="修复">修复</h2>
+<h3 id="针对平板电脑优化的任务栏">[针对平板电脑优化的任务栏]</h3>
+<p><em>注意：仅当您的设备启用了平板电脑优化任务栏选项（已于<a href="https://blogs.windows.com/windows-insider/2022/09/08/announcing-windows-11-insider-preview-build-25197/">此处</a>记录）时，才会获得这些修复。平板电脑优化的任务栏仍在向 Windows Insiders 推出，还未全量化。</em></p>
+<ul>
+<li>修复了导致任务栏在没有正在运行的窗口时可能折叠的问题。</li>
+<li>修复了使用左边缘或右边缘手势时分别导致小组件、通知中心与任务栏重叠或看起来被任务栏截断的问题。</li>
+<li>修复了导致任务栏在切换应用时 explorer.exe 崩溃的问题。</li>
+<li>修复了打开浮出控件后 explorer.exe 崩溃的问题。</li>
+</ul>
+<h3 id="窗口">[窗口]</h3>
+<ul>
+<li>修复了“任务视图”中窗口预览缩略图的关闭按钮略微超出缩略图范围的问题。</li>
+<li>修复了在最近版本的窗口中切换窗口，渲染时看到窗口闪烁的问题。</li>
+<li>修复了在互联网连接稳定时，导致 Miracast 视频质量在最近的版本中缓慢、断断续续的问题。</li>
+</ul>
+<h3 id="任务栏更新">[任务栏更新]</h3>
+<p><em>注意：仅当您的设备上启用了任务栏更新（<a href="https://blogs.windows.com/windows-insider/2022/09/08/announcing-windows-11-insider-preview-build-25197/">此处</a>记录）时，才会获得这些修复。平板电脑优化的任务栏仍在向 Windows Insiders 推出，尚未全量化。</em></p>
+<ul>
+<li>“快速设置”项目现在可以再次通过触摸进行重新排列。</li>
+</ul>
+<h3 id="设置">[设置]</h3>
+<ul>
+<li>修复了 <em>Windows 设置-网络和 Internet -高级网络设置</em> 下在某些网络中显示错误的连接速度的问题。</li>
+</ul>
+<h3 id="其他">[其他]</h3>
+<ul>
+<li>修复了 ARM64 电脑上的远程桌面意外地仅使用 TCP，不使用 TCP 的问题。<br>
+<em>注意：此处提到的某些修复可能会进入 Windows 11 正式版服务更新中。</em></li>
+</ul>
+<h2 id="已知问题">已知问题</h2>
+<h3 id="总览">[总览]</h3>
+<ul>
+<li>音频在升级最近版本后停止工作的问题正在被调查。</li>
+<li>应用在最近版本中崩溃的问题正在被调查。</li>
+<li>应用中的各种 UI 元素似乎在升级最新版本后消失，又重新出现的问题正在被调查。</li>
+</ul>
+<h3 id="平板电脑优化的任务栏">[平板电脑优化的任务栏]</h3>
+<ul>
+<li>在桌面姿态和平板电脑姿态之间切换时，任务栏有时会闪烁。</li>
+<li>在桌面姿态和平板电脑姿态之间切换时，任务栏需要更长的时间过渡到触摸优化版本。</li>
+<li>使用底部右侧边缘手势打开“快速设置”时，任务栏有时会停留在展开状态，而不是关闭到折叠状态。</li>
+</ul>
+<h3 id="小组件">[小组件]</h3>
+<ul>
+<li>在从右向左显示语言（如阿拉伯语）中，当单击小组件板的展开视图时，内容会在小部件板调整大小之前以动画形式离开视图。</li>
+<li>通知标记编号可能未在任务栏上对齐。</li>
+</ul>
+<h2 id="对于开发人员">对于开发人员</h2>
+<p>您可以在 &lt;aka.ms/windowsinsidersdk&gt; 中下载最新的 Windows Insider SDK。<br>
+SDK NuGet 包现在也在 <a href="https://www.nuget.org/profiles/WindowsSDK">NuGet资源库 | Windows SDK</a> 中进行更新。<br>
+其中包括：</p>
+<ul>
+<li>如 &lt;aka.ms/windowsinsidersdk&gt; 中所述的用于 .NET 应用的 <a href="https://www.nuget.org/packages/Microsoft.Windows.SDK.NET.Ref/">.NET TFM</a> 包</li>
+<li>每个体系结构的 Win32 标头和库的<a href="https://www.nuget.org/packages/Microsoft.Windows.SDK.CPP/">C++包</a></li>
+<li>当你只需要工具，如 MakeAppx.exe、MakePri.exe、SignTool.exe，请使用<a href="https://www.nuget.org/packages/Microsoft.Windows.SDK.BuildTools/">构建工具包</a><br>
+这些 NuGet 包提供对 SDK 的更精细访问，并在 CI/CD 管道中更好地集成。</li>
+</ul>
+<h2 id="新功能windows-11-中-microsoft-teams-chat-功能的新视频通话体验">新功能：Windows 11 中 Microsoft Teams Chat 功能的新视频通话体验</h2>
+<p>Windows 11 中的 Microsoft Teams Chat 功能将采用更直观，更简化的方式与世界上的任何人进行视频通话。<br>
+<img src="https://faq0.github.io/post-images/1665125793292.webp" alt="" loading="lazy"></p>
+<center>来自 Windows 11 中的Microsoft Teams Chat 功能的新视频通话体验</center>
+<br></br>
+当您从任务栏打开 Chat 功能时，窗口焦点将放在您身上，您可以预览自己的摄像头展示效果，以及与人员联系的各种方式。现在，与其他使用 Teams 个人版的人进行视频通话更加方便。对于那些不在 Teams 中的人来说，这也不是问题——您可以轻松地通过短信或电子邮件与任何人共享呼叫链接，并直接使用 Chat 功能进行对话。
+这种体验将在未来几个月内推广到更多成员，但一小部分用户现在已经可以开始体验。从任务栏启动 Chat 功能来查看您是否被加入。您可以直接在该功能中提供反馈，我们很乐意倾听您的反馈。
+*反馈：请在反馈中心（WIN + F）中的“桌面环境”>“聊天”下提交反馈。*
+## Microsoft Store 更新
+微软团队开始推出微软应用商店更新（版本 22209），其中包含以下改进：
++ 在应用商店中查找游戏时，现在清楚地显示它是否是 Xbox Game Pass 订阅中的游戏，以及当前的价格。在此类游戏的详细信息页面上，我们更新了按钮设计并添加了一个新部分，让您知道订阅中包含的内容。
+<figure data-type="image" tabindex="3"><img src="https://faq0.github.io/post-images/1665126257342.webp" alt="" loading="lazy"></figure>
+<center>应用商店中的游戏显示它是否包含于 Xbox Game Pass 订阅，以及当前的价格</center>
+<br></br>
++ 我们通过简化的选项和改进的性能增强了“库”选项卡的体验。
+*反馈：请在反馈中心 （WIN + F）中的“Microsoft Store”下提交反馈。*
+<p>关于开发频道<br>
+开发人员频道接收的构建代表了我们工程师的长期领导工作，这些工程师的功能和经验在我们尝试不同的概念并获得反馈时可能永远不会发布。请务必记住，我们发布到开发人员频道的内部版本不应被视为与任何特定版本的 Windows 匹配，并且所包含的功能可能会随着时间的推移而更改、删除或在预览体验成员版本中替换，或者可能永远不会在 Windows 预览体验成员之外向一般客户发布。有关详细信息，请阅读此博客文章，了解我们计划如何使用开发频道来孵化新想法、处理长线索项目以及控制各个功能的状态。</p>
+<p>这些并不总是稳定的版本，有时您会看到阻止关键活动或需要解决方法的问题。请务必阅读我们博客文章中列出的已知问题，因为我们记录了每个航班中的许多此类问题。</p>
+<p>开发人员频道中的内部版本号高于测试版和发布预览版频道中的 Windows 11 预览版。如果不执行全新安装，则无法从开发人员频道切换到测试版或发布预览版，否则无法将其安装回当前发布的 Windows 11 版本。</p>
+<p>另外：由于开发和 Beta 渠道代表了我们工程师的并行开发路径，因此在某些情况下，功能和体验可能会首先显示在测试版渠道中。</p>
+<p>您在桌面右下角看到的桌面水印对于这些预发行版本是正常的。</p>
+<h2 id="关于dev-渠道">关于Dev 渠道</h2>
+<p>Dev 通道收到的更新代表工程师的长期工作，<strong>其中包含了可能永远也不会推送至正式版更新的功能</strong>。Dev 通道也是我们尝试不同的概念并获取反馈的版本。请务必记住，推送至 Dev 通道的更新不应该与任何 Windows 版本相匹配。其中的功能可能会随着时间的推移而更改、移除、在 Insider 版本中被替代、或可能永远不会向一般客户发布。有关详细信息，请阅读<a href="https://blogs.windows.com/windows-insider/2022/02/03/whats-coming-for-the-windows-insider-program-in-2022/">此博客文章</a>，了解我们计划如何用 Dev 通道孵化新想法、处理长期项目以及控制各个独立功能的状态。</p>
+<p>这些版本并不总是稳定版本，有时您会看到阻止关键活动或需要解决方法的问题。请务必阅读 Windows Insider Blog 文章列出的已知问题，因为它记录了每个版本中的许多此类问题。<br>
+目前，Dev 通道的版本号高于 Beta 与 Release Preview 通道。您将需要对设备执行全新安装回正式版后才能切换至 Beta 与 Release Preview 通道。</p>
+<p>另外：由于 Dev 和 Beta 渠道代表了工程师的并行开发路径，因此在某些情况下，功能和体验可能会首先显示在 Beta 通道中。</p>
+<p><strong>您在桌面右下角看到的桌面水印对于这些预发布版本是正常的。</strong></p>
+<h2 id="windows-insider-特别链接">Windows Insider 特别链接</h2>
+<ul>
+<li>想要了解我们是如何制作 Windows 11 的？查看我们的 <a href="https://insider.windows.com/insidewindows11">Inside Windows 11 网站</a>，聆听并会见来自工程、设计和研究领域的创客，分享他们在整个旅程中的见解和独特观点。</li>
+<li>你可以在<a href="https://aka.ms/wip-docs">此处</a>查看我们的 Windows 预览体验计划文档。</li>
+<li>查看 <a href="https://aka.ms/flighthub">Flight Hub</a>，全面了解哪个预览体验成员频道中的版本。</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Build 22610 | WIP Dev通道更新日志]]></title>
+        <id>https://faq0.github.io/post/wip22610/</id>
+        <link href="https://faq0.github.io/post/wip22610/">
+        </link>
+        <updated>2022-05-01T04:00:00.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="目录">目录：</h1>
+<p><ul class="markdownIt-TOC">
+<li><a href="#%E7%9B%AE%E5%BD%95">目录：</a>
+<ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF">基本信息</a></li>
+</ul>
+</li>
+<li><a href="#%E9%87%8D%E8%A6%81%E6%9B%B4%E6%96%B0">重要更新</a></li>
+<li><a href="#%E5%AE%98%E6%96%B9%E5%8D%9A%E5%AE%A2-%E7%BF%BB%E8%AF%91%E7%89%88">官方博客 - 翻译版</a>
+<ul>
+<li><a href="#tl-dr">TL; DR</a></li>
+<li><a href="#build-22610-%E4%B8%AD%E6%9B%B4%E6%96%B0%E4%BA%86%E4%BB%80%E4%B9%88">Build 22610 中更新了什么？</a>
+<ul>
+<li><a href="#%E9%9D%A2%E5%90%91-it-%E7%AE%A1%E7%90%86%E5%91%98%E7%9A%84%E5%85%B6%E4%BB%96%E6%96%B0-mdm-%E5%92%8C%E7%BB%84%E7%AD%96%E7%95%A5">面向 IT 管理员的其他新 MDM 和组策略</a></li>
+<li><a href="#%E5%AE%B6%E5%BA%AD%E5%AE%89%E5%85%A8%E5%B0%8F%E7%BB%84%E4%BB%B6%E6%9B%B4%E6%96%B0">“家庭安全”小组件更新</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9B%B4%E6%94%B9%E5%92%8C%E6%94%B9%E8%BF%9B">更改和改进</a>
+<ul>
+<li><a href="#%E6%80%BB%E8%A7%88">[总览]</a></li>
+<li><a href="#%E4%BB%BB%E5%8A%A1%E6%A0%8F">[任务栏]</a></li>
+<li><a href="#%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8">[任务管理器]</a></li>
+<li><a href="#%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8">[文件资源管理器]</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE">[设置]</a></li>
+<li><a href="#%E5%85%B6%E4%BB%96">[其他]</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BF%AE%E5%A4%8D">修复</a>
+<ul>
+<li><a href="#%E6%80%BB%E8%A7%88-2">[总览]</a></li>
+<li><a href="#%E4%BB%BB%E5%8A%A1%E6%A0%8F-2">[任务栏]</a></li>
+<li><a href="#%E5%BC%80%E5%A7%8B%E8%8F%9C%E5%8D%95">[开始菜单]</a></li>
+<li><a href="#%E6%90%9C%E7%B4%A2">[搜索]</a></li>
+<li><a href="#%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8-2">[文件资源管理器]</a></li>
+<li><a href="#%E8%BE%93%E5%85%A5">[输入]</a></li>
+<li><a href="#%E5%B0%8F%E7%BB%84%E4%BB%B6">[小组件]</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE-2">[设置]</a></li>
+<li><a href="#%E7%AA%97%E5%8F%A3%E5%8C%96">[窗口化]</a></li>
+<li><a href="#%E8%AE%B2%E8%BF%B0%E4%BA%BA">[讲述人]</a></li>
+<li><a href="#%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8-2">[任务管理器]</a></li>
+<li><a href="#%E7%BD%91%E7%BB%9C">[网络]</a></li>
+<li><a href="#%E9%94%81%E5%AE%9A%E5%B1%8F%E5%B9%95%E5%92%8C%E7%99%BB%E5%BD%95">[锁定屏幕和登录]</a></li>
+<li><a href="#%E5%85%B6%E4%BB%96-2">[其他]</a></li>
+</ul>
+</li>
+<li><a href="#%E5%B7%B2%E7%9F%A5%E9%97%AE%E9%A2%98">已知问题</a>
+<ul>
+<li><a href="#%E6%80%BB%E8%A7%88-3">[总览]</a></li>
+<li><a href="#%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8-3">[任务管理器]</a></li>
+<li><a href="#%E5%B0%8F%E7%BB%84%E4%BB%B6-2">[小组件]</a></li>
+<li><a href="#%E5%AE%9E%E6%97%B6%E5%AD%97%E5%B9%95">[实时字幕]</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%B3%E4%BA%8Edev%E5%92%8C-beta%E6%B8%A0%E9%81%93-%E5%B7%B2%E6%9B%B4%E6%96%B0">关于Dev和 Beta渠道 [已更新!]</a></li>
+<li><a href="#windows-insider-%E7%89%B9%E5%88%AB%E9%93%BE%E6%8E%A5">Windows Insider 特别链接</a></li>
+</ul>
+</li>
+</ul>
+</p>
+<h2 id="基本信息">基本信息</h2>
+<p>内部版本号：10.0.22610.1<br>
+开发环：ni_release<br>
+22H2(NT10.0)<br>
+<img src="https://faq0.github.io/post-images/1665041355822.png" alt="Build 22610.1" loading="lazy"></p>
+<h1 id="重要更新">重要更新</h1>
+<ol>
+<li>新的组策略，可以在Windows 11 SE中隐藏开始菜单中的“建议”部分<br>
+<img src="https://faq0.github.io/post-images/1665041851954.png" alt="" loading="lazy"></li>
+<li>锁定屏幕中右下角电池图标与任务栏中的图标相匹配<br>
+<img src="https://faq0.github.io/post-images/1665041994239.jpg" alt="" loading="lazy"></li>
+<li>任务栏中“显示隐藏的图标”箭头可能消失</li>
+</ol>
+<h1 id="官方博客-翻译版">官方博客 - 翻译版</h1>
+<p>原文链接：<a href="http://aka.ms/wip22610">http://aka.ms/wip22610</a><br>
+翻译时间：2022.5.1</p>
+<h2 id="tl-dr">TL; DR</h2>
+<ul>
+<li>此版本中包含新的对于IT管理员的组策略和对于家庭安全小组件的更新。</li>
+<li>此版本中还含有可以改善您的整体体验的修复。</li>
+<li>此版本中包含两个会影响Windows Insiders的已知问题。新的已知问题将被标为“[NEW]”。其中的一个已知问题将影响任务栏中的“显示隐藏应用”浮出控件。</li>
+<li>[更新] 此版本中将不会发布对应的SDK。</li>
+</ul>
+<h2 id="build-22610-中更新了什么">Build 22610 中更新了什么？</h2>
+<h3 id="面向-it-管理员的其他新-mdm-和组策略">面向 IT 管理员的其他新 MDM 和组策略</h3>
+<p>我们正在引入新策略，以便 IT 管理员可以在开始菜单、任务栏和系统托盘中简化Windows 11体验。<br>
+以下是推出的组策略：</p>
+<ul>
+<li>禁用快速设置浮出控件</li>
+<li>禁用通知中心和日历浮出控件</li>
+<li>禁用所有任务栏设置</li>
+<li>禁用搜索（在开始菜单和任务栏中）</li>
+<li>从任务栏中隐藏任务视图</li>
+<li>阻止在开始屏幕中自定义固定图标</li>
+<li>从“开始”菜单中删除“建议”部分<br>
+通过此策略，您可以阻止&quot;开始&quot;菜单显示建议的应用程序和文件列表。<br>
+如果启用此策略设置，&quot;开始&quot;菜单将不再显示包含推荐文件和应用列表的部分。<br>
+适用于：Windows 11 SE</li>
+<li>禁用开始菜单中的上下文菜单</li>
+<li>在开始菜单中隐藏“所有应用”<br>
+若要在本地配置这些新的组策略，请打开组策略编辑器，然后导航到“用户配置”&gt;“管理模板”&gt;”’开始’菜单和任务栏”。<br>
+您也可以通过Microsoft Endpoint Manager部署这些策略。[https://docs.microsoft.com/mem/intune/configuration/custom-settings-configure]<br>
+反馈：若要反馈，请在反馈中心(WIN + F) 中定位到：</li>
+<li>桌面环境&gt;“开始”菜单，用于显示与“开始”相关的策略。</li>
+<li>桌面环境&gt;任务栏，用于与任务栏相关的策略。</li>
+<li>桌面环境&gt;与快速设置相关的策略的快速设置。</li>
+<li>桌面环境&gt;通知中心，用于查找与通知中心相关的策略。</li>
+</ul>
+<h3 id="家庭安全小组件更新">“家庭安全”小组件更新</h3>
+<p>为了帮助你和你的亲人保持安全和受到保护，我们将推出对“家庭安全”小组件的更新，通过新的位置共享视图为所有家庭成员提供改进，该视图显示你的家庭成员使用“家庭安全”应用的位置。此外，还有一项针对成员角色人员的新更新，其中包括跨应用和设备的屏幕时间使用情况的改进视图。<br>
+若要了解有关 Microsoft 家庭安全设置的详细信息并获取移动应用，请访问[https://aka.ms/microsoftfamilysafety]。请务必也查看Microsoft Family应用程序。</p>
+<center><figure><img src="file://D:/Documents/Gridea/post-images/1665042414161.png" />···<img src="file://D:/Documents/Gridea/post-images/1665042417430.png" />···<img src="file://D:/Documents/Gridea/post-images/1665042421478.png" /></figure></center>
+反馈：请将反馈提交在反馈中心 (WIN + F) 的 桌面环境 > 小组件 部分。
+<h2 id="更改和改进">更改和改进</h2>
+<h3 id="总览">[总览]</h3>
+<ul>
+<li>默认情况下，Windows 11 家庭版开发和测试版通道版本不再默认启用SMB1客户端。如果已手动安装SMB1或从安装了 SMB1 的旧版Windows升级，则升级后将不会删除 SMB1。<br>
+有关更多信息，请在此处查看此博客文章。<br>
+我们更新了锁定屏幕上电池图标的设计，使其与任务栏中的图标一致。                            <img src="https://faq0.github.io/post-images/1665041994239.jpg" alt="锁定屏幕上的电池图标与任务栏上电池图标相匹配的设计" loading="lazy"></li>
+<li>如果你的电脑支持，我们现在将在具有最新Insider Preview版本的系统托盘中电池图标的提示文字中显示预估电池剩余时间。</li>
+<li>桌面右下角的版本水印在此版本中不再存在。这并不意味着我们已经完成了开发，水印将在未来的版本中返回。</li>
+</ul>
+<h3 id="任务栏">[任务栏]</h3>
+<ul>
+<li>根据 Windows 预览体验成员的反馈，我们禁用了平板电脑优化的任务栏功能，该功能目前已开始在 Build 22563 中向 Windows 预览体验成员推出。我们希望在进一步完善体验后，将来能将此功能带回来。正如我们之前提到的，我们在 Dev 或 Beta 频道中试用的功能可能并不会发布。<br>
+[小组件]</li>
+<li>在Build 22563中发布的可以使得小组件带来更多实时内容的更新，将在开发和测试版渠道中向更多 Windows Insiders推出。</li>
+</ul>
+<h3 id="任务管理器">[任务管理器]</h3>
+<ul>
+<li>我们更新了任务管理器中的“进程”页面，以便热图中使用的颜色现在基于您的主题色。请注意，有时我们将使用默认的蓝色主题色以确保可读性。我们在本月的 Windows Insider Preview网络直播中进行了演示，演讲人包括任务管理器团队的 Claton Hendricks – <a href="https://www.youtube.com/watch?v=vU1gZgbUwa8">在此处观看网络直播(Youtube链接)</a>。<br>
+任务管理器中的“进程”页面现在根据主题色显示颜色。<br>
+<img src="https://faq0.github.io/post-images/1665043074685.png" alt="" loading="lazy"></li>
+</ul>
+<h3 id="文件资源管理器">[文件资源管理器]</h3>
+<ul>
+<li>我们更新了右键菜单和命令栏中使用的重命名、属性位置和图标，以提高可发现性和一致性。<br>
+<img src="https://faq0.github.io/post-images/1665043143208.png" alt="文件资源管理器中的右键菜单，显示重命名和属性的新图标。" loading="lazy"></li>
+</ul>
+<h3 id="设置">[设置]</h3>
+<ul>
+<li>“你的手机”名称现在被更改为“手机连接”，位于设置&gt;蓝牙和设备中。<em>“你的手机”应用现在是“手机连接”官方博客</em> - <a href="https://blogs.windows.com/windowsexperience/2022/03/31/evolving-the-connection-between-your-phone-and-your-windows-pc/">在此处阅读公告</a>。</li>
+</ul>
+<h3 id="其他">[其他]</h3>
+<ul>
+<li>根据 Windows Insiders的反馈，我们将回滚在Build 22557 中的更改，其中不再允许 TKIP 和 WEP 连接。从此版本开始，将再次允许这些连接。当连接时给出警告，通知这不是受保护的连接。<br>
+提醒一下，TKIP 和 WEP 是已弃用的安全标准，计划在将来的版本中删除。我们建议您将路由器或其他设备更新为至少支持 WPA2 的设备（WPA3 是当前标准）。</li>
+</ul>
+<h2 id="修复">修复</h2>
+<h3 id="总览-2">[总览]</h3>
+<ul>
+<li>我们修复了导致运行 Windows 10 的 Windows Insiders在尝试下载最新Dev/Beta版本时遇到下载错误代码0xc8000402的问题。如果您遇到此问题，请安装 KB5011831，然后再尝试下载最新版本。如果还有此问题，请在反馈中心提交反馈。</li>
+<li>我们修复了导致 Explorer.exe 在反复崩溃（并且无法成功加载）的问题，只有一小部分Windows Insiders受到影响。</li>
+<li>解决导致某些Windows Insiders在打开通知中心时遇到错误检查BAD_POOL_CALLER的问题。</li>
+<li>打开组策略编辑器时，将不再弹出管理模板错误。</li>
+<li>修复了在某些情况下，组策略编辑器在ARM64计算机上上意外显示“MMC无法初始化管理单元”的问题。</li>
+</ul>
+<h3 id="任务栏-2">[任务栏]</h3>
+<ul>
+<li>修复了阻止 Shift + 右键单击任务栏图标打开上下文菜单的问题。</li>
+<li>更改第二显示器的分辨率不应再导致任务栏应用图标意外向右移动。</li>
+<li>单击任务栏应立即关闭“快速设置”和“通知中心”等内容（如果它们已打开）。</li>
+<li>如果拔下第二监视器的插头，则第二监视器上使用的 Windows 和任务栏图标现在将正确传输到主监视器。</li>
+<li>修复了系统图标（如“开始”、“搜索”和“任务”视图）上无法出现任务栏图标动画的问题。</li>
+<li>现在，动画将在您第一次拖放到任务栏时正确播放。</li>
+<li>如果以从右向左（RTL）语言拖动到任务栏，则该图标现在将显示在正确的一侧。</li>
+<li>连接到 Wi-Fi 后，任务栏中的网络图标将不再错误地显示为已断开连接。</li>
+<li>修复了在转换为夏令时时使任务栏时钟时发生崩溃的问题。</li>
+<li>现在，当您再次单击远离“显示隐藏的图标”的浮出控件时，它将会关闭。</li>
+<li>当您将系统托盘中的所有图标设置为显示时，将不再显示空的“显示隐藏图标”箭头。</li>
+<li>修复了在小屏幕上打开“通知中心”时被切断的问题，即隐藏“请勿打扰”按钮。</li>
+<li>修复了阿拉伯语和希伯来语显示语言的问题，即通知中心在关闭时会意外弹出。</li>
+<li>如果您的麦克风正在被使用，但定位未被使用，则将鼠标悬停在任务栏中的麦克风按钮上不应再在提示框中显示具有空应用名称的位置部分。(即%1)</li>
+</ul>
+<h3 id="开始菜单">[开始菜单]</h3>
+<ul>
+<li>像Microsoft Edge这样的应用程序图标将不再在“开始”屏幕的所有应用程序列表的底部被切断。</li>
+<li>如果在拖动图标以在“开始”屏幕中创建文件夹时取消，则它们将不再卡在只有一个图标的文件夹中。</li>
+<li>“所有应用”下的“Windows 工具”条目现在应再次可见。</li>
+<li>“开始”菜单中文件夹的动画将在文件夹所在的位置启动，而不是第一个固定应用上。</li>
+</ul>
+<h3 id="搜索">[搜索]</h3>
+<ul>
+<li>我们做了一些工作来帮助解决有时无法搜索刚安装的应用的问题，即使它显示在“开始”屏幕中。</li>
+</ul>
+<h3 id="文件资源管理器-2">[文件资源管理器]</h3>
+<ul>
+<li>在文件资源管理器或桌面上使用重命名、复制、粘贴、删除和其他选项的右键菜单选项不应再导致explorer.exe在右键菜单关闭时崩溃。</li>
+<li>右键单击文件现在将显示文件资源管理器中更新的命名，并显示“添加到收藏夹”。</li>
+<li>在“打开或另存为”对话框的导航窗格中右键“此电脑”，现在应该会再次显示右键菜单。</li>
+<li>解决了在最近版本中选择大量文件时，文件资源管理器冻结的问题。</li>
+<li>我们对OneDrive文件夹中图像和压缩文件的键盘选择性能进行了一些改进。</li>
+<li>修复了在安装 WSL 时导致文件资源管理器频繁冻结的问题，以及通过“主文件夹”打开WSL中的文件的问题。</li>
+<li>为了提高性能，仅在打开“主文件夹”时，图像和视频现在将显示缩略图。</li>
+<li>更新了文件资源管理器中“Please sign in”按钮的提示框，从“Sign in again to fix authentication issues.”更改为“One of your accounts needs attention to show files from Office.com in Home”，使用途更清晰。</li>
+<li>我们解决了文件资源管理器中的“登录”按钮可能不起作用的问题。</li>
+<li>修复了在“主页”中加载最近使用的Office文件导致的explorer.exe崩溃问题。</li>
+<li>解决了右键单击某些文件类型时“打开”选项意外显示通用图标的问题。</li>
+<li>修复了一个潜在问题，该问题被认为是导致某些Windows Insiders在文件夹选项中的“Open File Explorer to”下拉列表中看不到“此电脑”选项的原因。</li>
+</ul>
+<h3 id="输入">[输入]</h3>
+<ul>
+<li>修复了以下几个问题：在某些情况下，表情符号面板、剪贴板历史记录和语音键入将在解锁电脑后或 Windows更新后立即无法使用。</li>
+<li>修复了物理键盘的文本建议有时可能以透明背景显示的问题。</li>
+<li>为了确保文本输入始终可用，如果在OOBE、登录屏幕或UAC对话框中使用触摸并点击文本字段，则即使连接了物理键盘，触摸键盘现在也将始终显示。</li>
+<li>锁定电脑时，如果在“设置”&gt;“时间和语言”&gt;”输入”&gt;”触摸键盘”下关闭了“在我输入内容时播放按键音”，则在登录屏幕上使用触摸键盘时，不应再听到按键的声音。</li>
+<li>当使用德语触摸键盘时，按住引号键后添加了”排版引号”选项。</li>
+<li>如果你在平板电脑上使用停靠的触摸键盘并点击了应用中没有焦点的文本字段，触摸键盘现在不会出现并立即消失</li>
+<li>改进了启动语音键入 （WIN + H） 后进入侦听状态的性能。</li>
+<li>修复了在手写面板中使用删除手势删除字母时出现的崩溃问题。</li>
+<li>解决了如果在“设置”&gt;“蓝牙和其他设备”&gt;”触摸板“&gt;”触摸板“下取消选中”连接鼠标时让触控板保持打开状态“后在连接-&gt;断开连接鼠标后不重新启用触摸板的问题。</li>
+<li>修复了在某些情况下，在屏幕上滑动手指时导致轨迹变红或不可见的问题。</li>
+<li>如果未安装中文（简体）IME，则“设置”&gt;个性化&gt;“文本输入”&gt;“主题”下将不会再显示自定义主题。</li>
+<li>如果连接了 Xbox 控制器，则使用它与游戏交互不应再弹出 “No supported apps in use for mic mute.”的窗口</li>
+</ul>
+<h3 id="小组件">[小组件]</h3>
+<ul>
+<li>改进了在升级或应用程序更新后首次登录时打开小组件板的可靠性。</li>
+<li>我们解决小部件板无法轻松关闭的问题。</li>
+<li>为了使状态更清晰，如果任务栏上的天气状态不可用，我们现在将显示一个灰色的天气图标。</li>
+<li>解决了导致升级后任务栏和设置中缺少”小组件”的潜在问题。此修复应使将来的电脑受到影响 - 如果你现在受到影响，请尝试重新安装这个应用(Windows Web Experience Pack)，可能会解决。</li>
+</ul>
+<h3 id="设置-2">[设置]</h3>
+<ul>
+<li>修复了英语（英国）的 Windows Update显示文本，使其显示“last checked”而不是“last ticked”。</li>
+<li>解决了导致在扫描模式下使用“讲述人”时无法激活 Windows 更新中的“立即重新启动”按钮的问题。</li>
+<li>如果您打开“快速设置”的“蓝牙”部分并返回，现在将不会导致“快速设置”中的滚动条样式发生变化。</li>
+<li>应用不应再在“设置”&gt;”个性化“&gt;”任务栏”&gt;”其他系统托盘图标”下显示不正确的图标。</li>
+<li>修复了导致“设置”&gt;”个性化“&gt;”任务栏”下的搜索图标颠倒显示，并且在”Desert“对比度主题中显示错误颜色的问题。</li>
+<li>修复了“快速设置”无法使用触摸输入的问题。</li>
+<li>解决了导致“快速设置”上方的媒体控件在媒体源关闭后仍然保留的问题。</li>
+<li>修复了在导航到 “快速设置”中选择声音输出选项时的崩溃问题</li>
+</ul>
+<h3 id="窗口化">[窗口化]</h3>
+<ul>
+<li>解决与屏幕顶部的贴靠布局相关的问题，其中一个大的不可见区域可能会卡住，并会消耗该区域的点击次数。</li>
+<li>当您在最大化窗口的标题栏上向下拖动时，现在从屏幕顶部调用捕捉布局应该更容易。</li>
+<li>如果贴靠组中有一个窗口设置为在所有桌面上显示，则当您将贴靠组拖放到任务视图中的其他桌面时，该设置现在应保持不变。</li>
+<li>修复了在使用分屏时导致explorer.exe崩溃的问题。</li>
+<li>修复了最近版本中DWM崩溃的问题。</li>
+<li>解决了使用 3 指触摸板手势调出 ALT + Tab 时未正确设置焦点的问题。</li>
+<li>修复了当您只打开了一个 Microsoft Edge 窗口并尝试捕捉它时，贴靠助手意外出现的问题。</li>
+<li>减少了在拖动窗口时看到亚克力背景明显滞后的可能性。</li>
+<li>改进了在全屏使用应用时从屏幕边缘使用手势（例如打开“开始”菜单）的可靠性。</li>
+<li>解决了在使用3指在屏幕上的手势以最小化某些全屏应用程序顶部打开的应用程序后，可能导致屏幕显示卡住的问题。</li>
+</ul>
+<h3 id="讲述人">[讲述人]</h3>
+<ul>
+<li>修复了使用“讲述人”和“键盘导航“的”显示隐藏的图标”面板时出现的问题，其中焦点跳出到图标末尾的任务栏，而不是循环回到开头。</li>
+<li>“讲述人”现在将从 Microsoft Edge 上页面的开头开始阅读，即使页面上的控件默认具有焦点（如必应的搜索框）。</li>
+</ul>
+<h3 id="任务管理器-2">[任务管理器]</h3>
+<ul>
+<li>修复了导致某些应用在任务管理器中显示为已挂起的根本问题，即使它们本应已挂起。</li>
+<li>修复了展开子进程的子进程会导致进程中“名称”列的内容明显偏移的问题。</li>
+<li>在设置中单击“显示所有进程的历史记录”不应再挂起或崩溃任务管理器。</li>
+<li>“运行新任务”按钮现在应该在“详细信息”和“服务”页上工作。</li>
+<li>为了解决文本和 UI 剪辑的问题，任务管理器将不再在标题栏上显示主题色。</li>
+</ul>
+<h3 id="网络">[网络]</h3>
+<ul>
+<li>当某些VPN连接时，导致某些Windows Insiders出现互联网连接问题的问题现在应该得到解决。</li>
+</ul>
+<h3 id="锁定屏幕和登录">[锁定屏幕和登录]</h3>
+<ul>
+<li>如果在启用对比主题时单击电源按钮，登录屏幕应该不会再崩溃。</li>
+<li>修复了登录屏幕上的网络图标在使用“设置”&gt;辅助功能“中的文本缩放选项时可能会被裁剪的问题。</li>
+<li>解决了快速点击登录屏幕崩溃的问题。</li>
+</ul>
+<h3 id="其他-2">[其他]</h3>
+<ul>
+<li>解决了在 Windows 11 的初始化设置（OOBE） 中阻止辅助功能浮出控件显示或用鼠标选择其中的项目的几个问题。</li>
+<li>在初始化设置（OOBE） 中的RTL（从右到左）语言中，辅助功能浮出控件将不再为空。</li>
+<li>修复了导致通知弹出窗口卡在屏幕侧面的透明框以阻止输入的问题。</li>
+<li>解决了一个潜在的问题，该问题被认为是系统在最近连接UPS时认为您使用的是电池的根本原因。</li>
+<li>用于启动快速助手（WIN + CTRL + Q）的键盘快捷方式现在应该再次工作。</li>
+<li>解决了某些已签名的应用程序被智能应用程序控制意外阻止的问题。</li>
+<li>如果使用键盘控制亮度或音量级别，则在“设置”中关闭动画效果时，现在显示的浮出控件为”设置”&gt;辅助功能&gt;”视觉效果”。</li>
+<li>解决了在使用 Xbox 游戏录制工具栏截取屏幕截图后可能导致黄色边框卡在游戏周围的潜在问题。</li>
+<li>修复了导致 Windows 安全中心应用在升级后未启动或显示提示，指出该协议未安装应用的基础应用注册问题。</li>
+<li>进行了更改，该更改应有助于解决预览体验成员看到 Windows 终端无法在 Microsoft Store 中更新并出现错误代码0x80073CFB的问题。</li>
+<li>修复了导致依赖 .NET Framework 的某些应用在最后几次运行中无法启动的问题。</li>
+<li>做了一些工作来解决 uxtheme.dll中的泄漏，导致某些应用中的性能随时间推移而有所下降。</li>
+<li>解决了导致碎片整理程序显示错误的问题，指出“目前不支持（0x80004002）此类接口”。</li>
+<li>修复了预览体验成员在断开蓝牙设备或其他蓝牙方案时可能遇到的最近版本中的错误检查错误DPC_WATCHDOG_VIOLATION。</li>
+<li>改进了连接 Apple AirPods 等蓝牙设备的可靠性。</li>
+<li>修复了连接某些蓝牙耳机后，从休眠状态恢复后导致音频无法立即播放的问题。</li>
+<li>解决了在最近版本中连接某些 USB 音频设备时可能导致错误检查并出现错误PAGE_FAULT_IN_NONPAGED_AREA的问题。</li>
+<li>修复了上一个版本中与 cdp.dll 相关的崩溃问题。</li>
+<li>修复了导致无线显示应用在过去几个版本中无法接收内容的潜在问题。</li>
+</ul>
+<h2 id="已知问题">已知问题</h2>
+<h3 id="总览-3">[总览]</h3>
+<ul>
+<li>[NEW]升级到Build 22610后，系统托盘中的“显示隐藏的图标”浮出控件可能会完全消失，即使它在设置&gt;个性化&gt;任务栏&gt;其他系统托盘图标下显示为“打开”。我们正在调查此问题。如果你需要访问将在“显示隐藏的的图标”浮出控件中显示的图标，你可以右键单击任务栏以打开任务栏设置页面，导航到“其他系统托盘图标”，然后把该应用切换为“开”，直到问题得到解决。<br>
+<em>非官方解决办法：重启explorer.exe</em></li>
+</ul>
+<h3 id="任务管理器-3">[任务管理器]</h3>
+<ul>
+<li>[NEW]从任务管理器的命令栏中启用效率模式可能会导致进程列表在“进程”页面上的“应用程序”和“后台”组之间波动。解决方法：使用右键菜单启用/禁用效率模式，然后重新打开任务管理器。</li>
+</ul>
+<h3 id="小组件-2">[小组件]</h3>
+<ul>
+<li>从屏幕侧面使用手势时，小组件可能无法打开。请暂时点击任务栏中的“小组件”图标。</li>
+</ul>
+<h3 id="实时字幕">[实时字幕]</h3>
+<ul>
+<li>某些全屏应用（例如视频播放器）会阻止实时字幕可见。</li>
+<li>某些位于屏幕顶部附近且在运行实时字幕之前关闭的应用将在位于顶部的实时字幕窗口后面重新启动。在应用具有焦点时使用系统菜单（ALT + 空格键）可将应用的窗口进一步下移。</li>
+</ul>
+<h2 id="关于dev和-beta渠道-已更新">关于Dev和 Beta渠道 [已更新!]</h2>
+<p>提醒一下，我们正在改进开发和发布给Windows Insiders的WIP Dev和Beta渠道的方式，Dev和 Beta 渠道现在代表了我们工程师的并行开发路径。Dev渠道将是一个我们将尝试不同概念，产生新想法以及处理可能无法发布给普通客户的长周期项目的地方。Beta 版渠道中，我们将会发布更加接近普通客户的体验的版本。但是，这并不意味着我们在 Beta 版频道中试用的每个功能都将正式发布。Windows Insiders可以阅读上个月的<a href="https://blogs.windows.com/windows-insider/2022/02/03/whats-coming-for-the-windows-insider-program-in-2022/">这篇博客文章</a>，其中概述了我们将在Dev和 Beta 渠道中与Windows Insiders一起尝试新功能的方式。<br>
+现在，Dev 和 Beta 版频道正在接收相同的内部版本。因此，如果您希望从Dev渠道切换至Beta渠道，请按照以下简单步骤进行切换：</p>
+<ol>
+<li>进入<a href="https://aka.ms/WIPSettings">设置 &gt; Windows 更新 &gt; Windows 预览体验计划</a>。</li>
+<li>选择“选择预览体验成员设置”。</li>
+<li>选择Beta渠道。</li>
+<li>下次您收到更新时，您将收到Beta渠道的更新。<br>
+重要说明：一旦我们向Dev渠道推送更高版本号的更新，此通道将关闭。如果你的设备保留在Dev渠道上，并且收到的内部版本号高于Beta渠道中的内部版本号，则必须在设备上<a href="https://docs.microsoft.com/windows-insider/isos">进行全新安装</a>才能切换到Beta渠道。<br>
+这些并不总是稳定的版本，有时您会看到阻止关键活动或需要解决方法的问题。请务必确保您阅读了博客文章中列出的已知问题，因为我们记录了每个内测版本的许多此类问题。<br>
+<em>您在桌面右下角看到的桌面水印对于这些预发布版本是正常的。</em></li>
+</ol>
+<h2 id="windows-insider-特别链接">Windows Insider 特别链接</h2>
+<ul>
+<li>想要了解我们是如何制作 Windows 11 的？查看我们的 <a href="https://insider.windows.com/insidewindows11">Inside Windows 11 网站</a>，聆听并会见来自工程、设计和研究领域的创客，分享他们在整个旅程中的见解和独特观点。</li>
+<li>你可以在<a href="https://aka.ms/wip-docs">此处</a>查看我们的 Windows 预览体验计划文档。</li>
+<li>查看 <a href="https://aka.ms/flighthub">Flight Hub</a>，全面了解哪个预览体验成员频道中的版本。</li>
+</ul>
+]]></content>
+    </entry>
+</feed>
