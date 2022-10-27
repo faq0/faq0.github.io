@@ -1,0 +1,421 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>Build 25227 | WIP Dev通道更新日志 | Untitled</title>
+<meta name="description" content="Untitled&#39;s Blog">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://faq0.github.io/favicon.ico?v=1666876015328">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://faq0.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://faq0.github.io">
+        <img class="avatar" src="https://faq0.github.io/images/avatar.png?v=1666876015328" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://faq0.github.io">
+        <h1 class="site-title">Untitled</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+            <div class="feature-container" style="background-image: url('https://faq0.github.io/post-images/wip25227.png')">
+            </div>
+          
+          <h2 class="post-title">Build 25227 | WIP Dev通道更新日志</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2022-10-20</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://faq0.github.io/tag/jR0jEO0nP/">
+                    Windows Insider Preview
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content" v-pre>
+            <h1 id="目录">目录：</h1>
+<p><ul class="markdownIt-TOC">
+<li><a href="#%E7%9B%AE%E5%BD%95">目录：</a></li>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF">基本信息</a></li>
+<li><a href="#%E9%87%8D%E8%A6%81%E6%9B%B4%E6%96%B0">重要更新</a></li>
+<li><a href="#%E5%AE%98%E6%96%B9%E5%8D%9A%E5%AE%A2-%E7%BF%BB%E8%AF%91%E7%89%88">官方博客 - 翻译版</a>
+<ul>
+<li><a href="#1021-%E6%9B%B4%E6%96%B0">10/21 更新</a></li>
+<li><a href="#tldr">TL;DR</a></li>
+<li><a href="#%E6%96%B0%E5%A2%9E%E5%8A%9F%E8%83%BD">新增功能</a></li>
+<li><a href="#%E6%9B%B4%E6%96%B0%E7%AE%A1%E7%90%86%E6%94%B9%E8%BF%9B">更新管理改进</a></li>
+<li><a href="#%E6%9B%B4%E6%94%B9%E5%92%8C%E6%94%B9%E8%BF%9B">更改和改进</a>
+<ul>
+<li><a href="#%E5%BC%80%E5%A7%8B%E8%8F%9C%E5%8D%95">[开始菜单]</a></li>
+<li><a href="#%E5%B0%8F%E7%BB%84%E4%BB%B6">[小组件]</a></li>
+<li><a href="#%E8%BE%93%E5%85%A5">[输入]</a></li>
+<li><a href="#%E8%AF%AD%E9%9F%B3%E8%BE%93%E5%85%A5">[语音输入]</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE">[设置]</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BF%AE%E5%A4%8D">修复</a>
+<ul>
+<li><a href="#%E6%80%BB%E8%A7%88">[总览]</a></li>
+<li><a href="#%E5%B9%B3%E6%9D%BF%E7%94%B5%E8%84%91%E4%BC%98%E5%8C%96%E4%BB%BB%E5%8A%A1%E6%A0%8F">[平板电脑优化任务栏]</a></li>
+<li><a href="#%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8">[文件资源管理器]</a></li>
+<li><a href="#%E5%BC%80%E5%A7%8B%E8%8F%9C%E5%8D%95-2">[开始菜单]</a></li>
+<li><a href="#%E6%90%9C%E7%B4%A2">[搜索]</a></li>
+<li><a href="#%E8%BE%93%E5%85%A5-2">[输入]</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE-2">[设置]</a></li>
+<li><a href="#%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8">[任务管理器]</a></li>
+<li><a href="#%E5%85%B6%E4%BB%96">[其他]</a></li>
+</ul>
+</li>
+<li><a href="#%E5%B7%B2%E7%9F%A5%E9%97%AE%E9%A2%98">已知问题</a>
+<ul>
+<li><a href="#%E6%80%BB%E8%A7%88-2">[总览]</a></li>
+<li><a href="#%E5%B9%B3%E6%9D%BF%E7%94%B5%E8%84%91%E4%BC%98%E5%8C%96%E7%9A%84%E4%BB%BB%E5%8A%A1%E6%A0%8F">[平板电脑优化的任务栏]</a></li>
+<li><a href="#%E8%BE%93%E5%85%A5-3">[输入]</a></li>
+<li><a href="#%E5%B0%8F%E7%BB%84%E4%BB%B6-2">[小组件]</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AF%B9%E4%BA%8E%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98">对于开发人员</a></li>
+<li><a href="#inside-windows-11-%E7%AC%AC%E4%BA%8C%E5%AD%A3">Inside Windows 11 - 第二季</a>
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E9%9B%86-windows-11-%E8%BE%85%E5%8A%A9%E5%8A%9F%E8%83%BD">第一集 - Windows 11 辅助功能</a></li>
+</ul>
+</li>
+<li><a href="#microsoft-store-%E6%9B%B4%E6%96%B0">Microsoft Store 更新</a></li>
+<li><a href="#%E5%85%B3%E4%BA%8Edev-%E6%B8%A0%E9%81%93">关于Dev 渠道</a></li>
+<li><a href="#%E9%87%8D%E8%A6%81-windows-insider-%E9%93%BE%E6%8E%A5">重要 Windows Insider 链接</a></li>
+</ul>
+</li>
+</ul>
+</p>
+<h1 id="基本信息">基本信息</h1>
+<p>内部版本号：10.0.25227.1000<br>
+开发环：rs_prerelease<br>
+23H1 (NT10.0)<br>
+<img src="https://faq0.github.io/post-images/1666791407946.png" alt="Build 25227" loading="lazy"></p>
+<h1 id="重要更新">重要更新</h1>
+<ol>
+<li>微软中文IME更新</li>
+<li>第三方小组件工具已启用</li>
+</ol>
+<h1 id="官方博客-翻译版">官方博客 - 翻译版</h1>
+<p>原文链接：<a href="http://aka.ms/wip25217">http://aka.ms/wip25217</a><br>
+翻译时间：2022.10.26</p>
+<h2 id="1021-更新">10/21 更新</h2>
+<p>累积更新版本号 25227.1010（KB5020539）已推出。此更新不包含任何新增内容，旨在测试开发人员频道中内部版本的服务管道。</p>
+<h2 id="tldr">TL;DR</h2>
+<ul>
+<li>此版本提供 ISO 下载——<a href="https://aka.ms/wipISO">点击此处</a>。</li>
+<li>此版本包括对 IT 管理员更新管理的改进以及一些良好的常规更改和改进。</li>
+<li>Inside Windows 11 对于 Windows 11 2022 更新的第二季第一级已经可供观看，内容关于辅助功能。</li>
+<li>Microsoft Store 推出更新，为游戏和电影提供弹出式预告片——详细信息如下！</li>
+</ul>
+<h2 id="新增功能">新增功能</h2>
+<h2 id="更新管理改进">更新管理改进</h2>
+<p>确保 Windows 更新的重启时间一致且可预测是成功更新策略的关键部分。为了提高重启的可预测性，我们对更新堆栈业务流程协调程序 (Update Stack Orchestrator) 进行了以下更改：</p>
+<ul>
+<li>质量和功能更新的<strong>截止时间</strong>计算现在基于客户端的更新扫描最初发现更新的时间。<br>
+以前，<strong>截止时间</strong>基于质量更新的更新发布日期和功能更新的重启时间。</li>
+<li><strong>&quot;指定自动更新和重启的截止时间&quot;</strong> 组策略设置拆分为两个单独的设置，以与现有配置服务提供程序 （CSP） 策略保持一致。组策略设置中的选项对于功能和质量更新是相同的。每个新设置还具有 &quot;<strong>宽限期结束前不自动重启&quot;</strong> 选项。新的组策略设置包括：
+<ul>
+<li><strong>指定自动更新的截止时间与质量更新的重新启动截止时间</strong></li>
+<li>** 指定自动更新的截止时间与需重新启动的功能更新的截止时间**</li>
+</ul>
+</li>
+</ul>
+<figure data-type="image" tabindex="1"><img src="https://faq0.github.io/post-images/1666792140620.webp" alt="" loading="lazy"></figure>
+<ul>
+<li>为了减少<strong>截止时间</strong>计算更改的影响，功能更新的默认值已更改为以下内容：
+<ul>
+<li><a href="https://learn.microsoft.com/windows/client-management/mdm/policy-csp-update#update-configuredeadlineforfeatureupdates">Update/ConfigureDeadlineForFeatureUpdates</a> = 2（以前为 7）</li>
+<li><a href="https://learn.microsoft.com/windows/client-management/mdm/policy-csp-update#update-configuredeadlinegraceperiodforfeatureupdates">Update/ConfigureDeadlineGracePeriodForFeatureUpdate</a> = 7（以前为 2）</li>
+</ul>
+</li>
+</ul>
+<p><strong>反馈：请在反馈中心（WIN + F）中“安装和更新”下的“所有其他问题”下提交反馈。</strong></p>
+<h2 id="更改和改进">更改和改进</h2>
+<h3 id="开始菜单">[开始菜单]</h3>
+<ul>
+<li>我们正在尝试对开始菜单进行一个小的更改，一些 Windows Insiders 将在其用户配置文件上看到通知标记，通知他们需要执行某些操作。</li>
+</ul>
+<h3 id="小组件">[小组件]</h3>
+<ul>
+<li>我们正在尝试标题栏的一些不同位置，其中包含小组件板的新图标，以了解如何为我们的用户最好地优化小组件板。通过使用单行图标，用户可以得到一致、干净且易于访问的图标，并通过简单的视觉效果传达动作和功能。</li>
+</ul>
+<figure data-type="image" tabindex="2"><img src="https://faq0.github.io/post-images/1666792517033.webp" alt="" loading="lazy"></figure>
+<h3 id="输入">[输入]</h3>
+<ul>
+<li>从 <a href="https://blogs.windows.com/windows-insider/2022/09/21/announcing-windows-11-insider-preview-build-25206/">Build  25206</a> 中开始推出的密码字段上使用剪贴板历史记录 （WIN + V） 的更改现在可供 Dev 通道中的所有 Windows Insiders 使用。</li>
+<li>你可以再次向 Microsoft 提供语音剪辑，即使使用了设备上的语音识别也是如此。</li>
+</ul>
+<h3 id="语音输入">[语音输入]</h3>
+<ul>
+<li>在使用同一 Microsoft 帐户登录时，所有设备上都能同步语音键入设置、<strong>自动标点符号</strong>和<strong>语音输入启动器</strong>。您可以通过 <strong>设置&gt;帐户&gt;Windows 备份&gt;记住我的偏好&gt;辅助功能</strong> 来切换此功能。这目前仅适用于当前的 Microsoft 帐户，以后将支持 AAD 账户。</li>
+</ul>
+<h3 id="设置">[设置]</h3>
+<ul>
+<li>如果用户选择在 系统&gt;存储&gt;磁盘和卷&gt;磁盘属性 下更改存储驱动器的分区样式，则新对话框将警告用户潜在的数据丢失。</li>
+<li>我们更新了设置应用中的以太网和 Wi-Fi 属性页，现在在网络详细信息摘要中可以显示网关信息。</li>
+</ul>
+<h2 id="修复">修复</h2>
+<h3 id="总览">[总览]</h3>
+<ul>
+<li>修复了导致某些 Windows Insiders 在升级到最新的 Dev 通道版本时出现 0xC1900101 错误。<br>
+*这是一个通用的回滚错误代码，因此如果您在更新后继续看到此错误，您可能会遇到其他问题。如果发生这种情况，请在反馈中心的“安装和更新”&gt;“下载、安装和配置 Windows 更新”下提交有关它的反馈。</li>
+</ul>
+<h3 id="平板电脑优化任务栏">[平板电脑优化任务栏]</h3>
+<p><em>注意：仅当设备上启用了平板电脑优化任务栏（<a href="https://blogs.windows.com/windows-insider/2022/09/08/announcing-windows-11-insider-preview-build-25197/">此处记录</a>）时，才会显示这些修复。平板电脑优化的任务栏仍在向 Windows Insiders 推出，尚未全量化。</em></p>
+<ul>
+<li>修复了在平板电脑优化任务栏上的应用之间切换时导致 explorer.exe 崩溃的问题。</li>
+<li>开始屏幕的触摸手势在使用平板电脑优化的任务栏时应正确地跟随手指。</li>
+<li>改进了使用平板电脑优化任务栏的触摸手势及其动画与触摸键盘配合使用的方式。</li>
+<li>现在，您可以使用笔从任务栏中向上轻扫以展开平板电脑优化的任务栏。</li>
+<li>[任务栏更新]<br>
+<em>注意：仅当设备上启用了任务栏更新（<a href="https://blogs.windows.com/windows-insider/2022/09/08/announcing-windows-11-insider-preview-build-25197/">此处记录</a>）时，才会显示这些修复。平板电脑优化的任务栏仍在向 Windows Insiders 推出，尚未全量化。</em></li>
+<li>修复了在任务栏中拖动图标时导致 explorer.exe 崩溃的问题。</li>
+<li>右键单击任务栏图标不应再导致自动隐藏的任务栏不正确地隐藏。</li>
+<li>任务栏中的显示隐藏图标面板不应阻止之后打开的上下文菜单。</li>
+<li>修复了首次尝试从任务栏打开“快速设置”时无法正常工作的问题。</li>
+<li>修复了阻止任务栏图标实时更新的问题。</li>
+</ul>
+<h3 id="文件资源管理器">[文件资源管理器]</h3>
+<ul>
+<li>当您使用鼠标滚轮滚动到导航窗格的底部并尝试向上滚动时，它应该不再卡在底部。</li>
+<li>修复了在打开“打开文件”对话框或“保存文件”对话框时可能导致某些应用挂起的问题。</li>
+<li>对可能导致 Windows Insiders 在导航窗格中看到分隔线重叠条的情况进行了另一个修复。</li>
+</ul>
+<h3 id="开始菜单-2">[开始菜单]</h3>
+<ul>
+<li>修复了在打开的开始菜单文件夹中拖动内容可能会导致崩溃的问题。</li>
+</ul>
+<h3 id="搜索">[搜索]</h3>
+<ul>
+<li>进行了修复，以帮助解决单击任务栏中的搜索图标时搜索窗口可能没有响应的问题。</li>
+<li>从搜索中打开图像不应再意外地在“打印”中打开它们。</li>
+</ul>
+<h3 id="输入-2">[输入]</h3>
+<ul>
+<li>修复了您可能在一段时间后无法使用鼠标与某些游戏进行交互的问题。</li>
+<li>修复了乘法符号 （×， U+00D7） 在具有高分辨率屏幕的用户的 Yu Gothic 字体系列中无法正确显示的问题。</li>
+</ul>
+<h3 id="设置-2">[设置]</h3>
+<ul>
+<li>应用&gt;启动应用 下的 UWP 应用图标的大小现在应显示正常的大小。</li>
+</ul>
+<h3 id="任务管理器">[任务管理器]</h3>
+<ul>
+<li>从标题栏底部区域拖动任务管理器以移动窗口的操作现在应可以正常使用。</li>
+</ul>
+<h3 id="其他">[其他]</h3>
+<ul>
+<li>修复了导致某些应用在最新版本（包括 OneNote）中崩溃的几个问题。我们将继续调查反馈。</li>
+<li>进行了更改以解决在使用利用 Microsoft-Windows-DxgKrnl ETW 提供程序的性能监视工具时可能导致性能下降的问题。这也影响了Windows混合现实的性能。* 如果您遇到性能问题，请参阅<a href="https://learn.microsoft.com/windows-insider/feedback-categories#performance">此处</a>，了解有关提交可操作的效果反馈的步骤。</li>
+<li>修复了启用了“收听此设备”的录音设备在播放声音时可能不会显示在音量混合器中的问题。</li>
+<li>如果重置电脑，则重置时显示的屏幕现在将为黑色，与升级屏幕一致。</li>
+<li>如果在以前的 Dev 通道版本中尝试玩某些游戏时遇到游戏服务崩溃，请查看 Microsoft Store 的游戏服务更新，现在应该已解决。</li>
+<li>修复了导致某些 PC 在升级到最新版本时意外进行错误检查的问题，错误消息为“MULTIPROCESSOR_CONFIGURATION_NOT_SUPPORTED”。</li>
+<li>修复了上一个版本中可能导致 Miracast 无法连接的问题。<br>
+<em>注意：此处在 Dev 通道的版本中记录的某些修复可能会进入 Windows 11 正式版的服务更新。</em></li>
+</ul>
+<h2 id="已知问题">已知问题</h2>
+<h3 id="总览-2">[总览]</h3>
+<ul>
+<li>音频在升级最近版本后停止工作的问题正在被调查。</li>
+<li>应用在最近版本中崩溃的问题正在被调查。</li>
+<li>应用中的各种 UI 元素似乎在升级最新版本后消失，又重新出现的问题正在被调查。</li>
+</ul>
+<h3 id="平板电脑优化的任务栏">[平板电脑优化的任务栏]</h3>
+<ul>
+<li>在桌面姿态和平板电脑姿态之间切换时，任务栏有时会闪烁。</li>
+<li>使用底部右侧边缘手势打开“快速设置”时，任务栏有时会停留在展开状态，而不是关闭到折叠状态。</li>
+</ul>
+<h3 id="输入-3">[输入]</h3>
+<ul>
+<li>输入光标在划过输入区域时变白的问题正在被调查。</li>
+</ul>
+<h3 id="小组件-2">[小组件]</h3>
+<ul>
+<li>在从右向左显示语言（如阿拉伯语）中，当单击小组件板的展开视图时，内容会在小部件板调整大小之前以动画形式离开视图。</li>
+</ul>
+<h2 id="对于开发人员">对于开发人员</h2>
+<p>您可以在 &lt;aka.ms/windowsinsidersdk&gt; 中下载最新的 Windows Insider SDK。<br>
+SDK NuGet 包现在也在 <a href="https://www.nuget.org/profiles/WindowsSDK">NuGet资源库 | Windows SDK</a> 中进行更新。<br>
+其中包括：</p>
+<ul>
+<li>如 &lt;aka.ms/windowsinsidersdk&gt; 中所述的用于 .NET 应用的 <a href="https://www.nuget.org/packages/Microsoft.Windows.SDK.NET.Ref/">.NET TFM</a> 包</li>
+<li>每个体系结构的 Win32 标头和库的<a href="https://www.nuget.org/packages/Microsoft.Windows.SDK.CPP/">C++包</a></li>
+<li>当你只需要工具，如 MakeAppx.exe、MakePri.exe、SignTool.exe，请使用<a href="https://www.nuget.org/packages/Microsoft.Windows.SDK.BuildTools/">构建工具包</a><br>
+这些 NuGet 包提供对 SDK 的更精细访问，并在 CI/CD 管道中更好地集成。</li>
+</ul>
+<h2 id="inside-windows-11-第二季">Inside Windows 11 - 第二季</h2>
+<p>了解我们如何以及为何在 Windows 11 2022 更新中制作功能。查看我们的 <a href="https://insider.windows.com/insidewindows11">Inside Windows 11</a> 网站，聆听并认识我们的工程、设计和研究团队的制作者，他们在整个旅程中分享他们的见解和独特的观点。</p>
+<h3 id="第一集-windows-11-辅助功能">第一集 - Windows 11 辅助功能</h3>
+<p><a href="https://youtu.be/U6pERykJh88">https://youtu.be/U6pERykJh88</a><br>
+Windows 11 使任何人都可以处于最佳状态，无论能力如何。查看有关我们如何制作讲述人、实时字幕和语音访问功能的完整故事。</p>
+<h2 id="microsoft-store-更新">Microsoft Store 更新</h2>
+<p>运行 Microsoft Store V22209 的 Windows Insiders 可以看到以下更新：</p>
+<ul>
+<li><strong>游戏和电影的弹出式预告片</strong>：添加了一种新的交互方式，供您预览自己喜欢的游戏和电影的预告片。</li>
+</ul>
+<figure data-type="image" tabindex="3"><img src="https://faq0.github.io/post-images/1666794450574.webp" alt="" loading="lazy"></figure>
+<p><strong>反馈：请在反馈中心（WIN+F）中的 Microsoft Store 选项下提供反馈。</strong></p>
+<h2 id="关于dev-渠道">关于Dev 渠道</h2>
+<p>Dev 通道收到的更新代表工程师的长期工作，<strong>其中包含了可能永远也不会推送至正式版更新的功能</strong>。Dev 通道也是我们尝试不同的概念并获取反馈的版本。请务必记住，推送至 Dev 通道的更新不应该与任何 Windows 版本相匹配。其中的功能可能会随着时间的推移而更改、移除、在 Insider 版本中被替代、或可能永远不会向一般客户发布。有关详细信息，请阅读<a href="https://blogs.windows.com/windows-insider/2022/02/03/whats-coming-for-the-windows-insider-program-in-2022/">此博客文章</a>，了解我们计划如何用 Dev 通道孵化新想法、处理长期项目以及控制各个独立功能的状态。</p>
+<p>这些版本并不总是稳定版本，有时您会看到阻止关键活动或需要解决方法的问题。请务必阅读 Windows Insider Blog 文章列出的已知问题，因为它记录了每个版本中的许多此类问题。<br>
+目前，Dev 通道的版本号高于 Beta 与 Release Preview 通道。您将需要对设备执行全新安装回正式版后才能切换至 Beta 与 Release Preview 通道。</p>
+<p>另外：由于 Dev 和 Beta 渠道代表了工程师的并行开发路径，因此在某些情况下，功能和体验可能会首先显示在 Beta 通道中。</p>
+<p><strong>您在桌面右下角看到的桌面水印对于这些预发布版本是正常的。</strong></p>
+<h2 id="重要-windows-insider-链接">重要 Windows Insider 链接</h2>
+<ul>
+<li>你可以<a href="https://aka.ms/wip-docs">在此处查看我们的 Windows 预览体验计划文档</a>。</li>
+<li>查看 <a href="https://aka.ms/flighthub">Flight Hub</a> 以全面了解 Dev 通道中的版本。</li>
+</ul>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://faq0.github.io/post/wip22610/">
+              <h3 class="post-title">
+                下一篇：Build 22610 | WIP Dev通道更新日志
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+        
+          <div id="gitalk-container"></div>
+        
+
+        
+      
+
+      <div class="site-footer">
+  <div class="slogan">Untitled's Blog</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  My Profile:  <a href="https://github.com/faq0" target="_blank">Github</a> | <a class="rss" href="https://faq0.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: [''],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
